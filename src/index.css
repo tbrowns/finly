@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hesabu design system — serious fintech SaaS. Dark navy shell + clean light cards.
+   All colors HSL. */
+
+@layer base {
+  :root {
+    /* App shell - dark navy slate */
+    --background: 222 33% 8%;
+    --foreground: 210 20% 96%;
+
+    /* Cards: clean light surface on dark shell */
+    --card: 0 0% 100%;
+    --card-foreground: 222 33% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 33% 12%;
+
+    /* Brand: deep teal/blue accent */
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 25% 16%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.625rem;
+
+    /* Severity tokens */
+    --severity-green: 152 70% 38%;
+    --severity-green-foreground: 0 0% 100%;
+    --severity-green-soft: 152 60% 95%;
+    --severity-green-soft-foreground: 152 70% 22%;
+
+    --severity-amber: 35 92% 50%;
+    --severity-amber-foreground: 30 80% 12%;
+    --severity-amber-soft: 38 92% 95%;
+    --severity-amber-soft-foreground: 30 80% 22%;
+
+    --severity-red: 0 75% 50%;
+    --severity-red-foreground: 0 0% 100%;
+    --severity-red-soft: 0 80% 96%;
+    --severity-red-soft-foreground: 0 70% 30%;
+
+    /* Surfaces */
+    --surface: 0 0% 100%;
+    --surface-muted: 220 14% 97%;
+    --shell: 222 33% 8%;
+    --shell-elevated: 222 28% 12%;
+    --shell-border: 222 20% 20%;
+    --shell-muted-foreground: 215 16% 65%;
+
+    /* Sidebar (dark) */
+    --sidebar-background: 222 33% 8%;
+    --sidebar-foreground: 215 16% 75%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 222 28% 14%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 222 20% 18%;
+    --sidebar-ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .card-surface {
+    @apply bg-card text-card-foreground rounded-xl border border-border shadow-sm;
+  }
+  .shell-panel {
+    background: hsl(var(--shell-elevated));
+    border: 1px solid hsl(var(--shell-border));
+    @apply rounded-xl;
+  }
+}
